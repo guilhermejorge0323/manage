@@ -1,0 +1,54 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+html{
+    overflow-x: none;
+    width: 100vw;
+    height: 100vh;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+}
+
+a{
+    text-decoration: none;
+}
+
+button{
+    outline: none;
+    border: none;
+}
+
+
+.container{
+    width: 50vw;
+    height: 50vh;
+    background-color: blue;
+}
+
+
+
+/* Responsive */
+
+/* @media (min-height: 2160px){
+
+}
+
+@media (min-height: 1440px){
+
+}
+ */
+
+/* mobile */
+
+@media (max-width: 768px){
+    .container{
+        background-color: red;
+    }
+}

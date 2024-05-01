@@ -20,23 +20,36 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, `*{
+___CSS_LOADER_EXPORT___.push([module.id, `:root{
+    /* Colors */
+    --Bright-Red: hsl(12, 88%, 59%);
+    --Dark-Blue: hsl(228, 39%, 23%);
+    --Dark-Grayish-Blue: hsl(227, 12%, 61%);
+    --Very-Dark-Blue: hsl(233, 12%, 13%);
+    --Very-Pale-Red: hsl(13, 100%, 96%);
+    --Very-Light-Gray: hsl(0, 0%, 98%);
+    /* Sizes */
+    --logo-size: 10vw;
+    /* Fonts */
+    --font-nav: 0.8vw;
+}
+*{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     list-style: none;
+    font-family: 'Be Vietnam Pro';
 }
 
 html{
-    overflow-x: none;
-    width: 100vw;
-    height: 100vh;
+    overflow-x: hidden;
 }
 
 body{
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 1000vh;
 }
 
 a{
@@ -48,33 +61,113 @@ button{
     border: none;
 }
 
+ul{
+    display: flex;
+}
+
 
 .container{
-    width: 50vw;
-    height: 50vh;
-    background-color: blue;
+    width: 85%;
+    margin: 0 auto;
 }
+
+
+/* header */
+header{
+    height: 85vh;
+}
+
+header nav{
+    height: 15%;
+    display: flex;
+    align-items: center;
+}
+
+.overlay{
+    display: none;
+}
+
+header nav .container{
+    display: flex;
+}
+
+header nav .container #area-logo-nav{
+    display: flex;
+    align-items: center;
+    width: 30%;
+}
+
+header nav .container #area-logo-nav .logo{
+    width: var(--logo-size);
+    min-width: 150px;
+}
+
+header nav .container #area-menu-nav{
+    display: flex;
+    align-items: center;
+    width: 60%;
+}
+
+header nav .container #area-menu-nav .menu-nav  ul li{
+    padding: 0 1.2vw;
+    font-weight: 700;
+    font-size: var(--font-nav);
+}
+
+header nav .container #area-button-nav{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 10%;
+}
+header nav .container #area-button-nav .bnt-primary{
+    background-color: var(--Bright-Red);
+    color: var(--Very-Light-Gray);
+    font-size: var(--font-nav);
+    padding: 1.5vh 2vw;
+    font-weight: 700;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+}
+
+header nav .container #area-button-nav #btn-hamburger{
+    display: none;
+}
+
+
+
+
+
+
+
 
 
 
 /* Responsive */
 
-/* @media (min-height: 2160px){
+@media (min-width: 2160px){
 
 }
 
-@media (min-height: 1440px){
+@media (min-width: 2560px){
 
+    :root{
+        /* sizes */
+        --logo-size: 6.7vw;
+        /* fonts */
+        --font-nav: 0.55vw;
+    }
 }
- */
+
 
 /* mobile */
 
 @media (max-width: 768px){
-    .container{
-        background-color: red;
-    }
-}`, "",{"version":3,"sources":["webpack://./src/css/style.css"],"names":[],"mappings":"AAAA;IACI,UAAU;IACV,SAAS;IACT,sBAAsB;IACtB,gBAAgB;AACpB;;AAEA;IACI,gBAAgB;IAChB,YAAY;IACZ,aAAa;AACjB;;AAEA;IACI,WAAW;IACX,YAAY;AAChB;;AAEA;IACI,qBAAqB;AACzB;;AAEA;IACI,aAAa;IACb,YAAY;AAChB;;;AAGA;IACI,WAAW;IACX,YAAY;IACZ,sBAAsB;AAC1B;;;;AAIA,eAAe;;AAEf;;;;;;;EAOE;;AAEF,WAAW;;AAEX;IACI;QACI,qBAAqB;IACzB;AACJ","sourcesContent":["*{\r\n    padding: 0;\r\n    margin: 0;\r\n    box-sizing: border-box;\r\n    list-style: none;\r\n}\r\n\r\nhtml{\r\n    overflow-x: none;\r\n    width: 100vw;\r\n    height: 100vh;\r\n}\r\n\r\nbody{\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\na{\r\n    text-decoration: none;\r\n}\r\n\r\nbutton{\r\n    outline: none;\r\n    border: none;\r\n}\r\n\r\n\r\n.container{\r\n    width: 50vw;\r\n    height: 50vh;\r\n    background-color: blue;\r\n}\r\n\r\n\r\n\r\n/* Responsive */\r\n\r\n/* @media (min-height: 2160px){\r\n\r\n}\r\n\r\n@media (min-height: 1440px){\r\n\r\n}\r\n */\r\n\r\n/* mobile */\r\n\r\n@media (max-width: 768px){\r\n    .container{\r\n        background-color: red;\r\n    }\r\n}"],"sourceRoot":""}]);
+
+}`, "",{"version":3,"sources":["webpack://./src/css/style.css"],"names":[],"mappings":"AAEA;IACI,WAAW;IACX,+BAA+B;IAC/B,+BAA+B;IAC/B,uCAAuC;IACvC,oCAAoC;IACpC,mCAAmC;IACnC,kCAAkC;IAClC,UAAU;IACV,iBAAiB;IACjB,UAAU;IACV,iBAAiB;AACrB;AACA;IACI,UAAU;IACV,SAAS;IACT,sBAAsB;IACtB,gBAAgB;IAChB,6BAA6B;AACjC;;AAEA;IACI,kBAAkB;AACtB;;AAEA;IACI,YAAY;IACZ,cAAc;AAClB;;AAEA;IACI,qBAAqB;AACzB;;AAEA;IACI,aAAa;IACb,YAAY;AAChB;;AAEA;IACI,aAAa;AACjB;;;AAGA;IACI,UAAU;IACV,cAAc;AAClB;;;AAGA,WAAW;AACX;IACI,YAAY;AAChB;;AAEA;IACI,WAAW;IACX,aAAa;IACb,mBAAmB;AACvB;;AAEA;IACI,aAAa;AACjB;;AAEA;IACI,aAAa;AACjB;;AAEA;IACI,aAAa;IACb,mBAAmB;IACnB,UAAU;AACd;;AAEA;IACI,uBAAuB;IACvB,gBAAgB;AACpB;;AAEA;IACI,aAAa;IACb,mBAAmB;IACnB,UAAU;AACd;;AAEA;IACI,gBAAgB;IAChB,gBAAgB;IAChB,0BAA0B;AAC9B;;AAEA;IACI,aAAa;IACb,mBAAmB;IACnB,yBAAyB;IACzB,UAAU;AACd;AACA;IACI,mCAAmC;IACnC,6BAA6B;IAC7B,0BAA0B;IAC1B,kBAAkB;IAClB,gBAAgB;IAChB,mBAAmB;IACnB,2BAA2B;IAC3B,wBAAwB;IACxB,uBAAuB;IACvB,sBAAsB;AAC1B;;AAEA;IACI,aAAa;AACjB;;;;;;;;;;;AAWA,eAAe;;AAEf;;AAEA;;AAEA;;IAEI;QACI,UAAU;QACV,kBAAkB;QAClB,UAAU;QACV,kBAAkB;IACtB;AACJ;;;AAGA,WAAW;;AAEX;;AAEA","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap');\r\n\r\n:root{\r\n    /* Colors */\r\n    --Bright-Red: hsl(12, 88%, 59%);\r\n    --Dark-Blue: hsl(228, 39%, 23%);\r\n    --Dark-Grayish-Blue: hsl(227, 12%, 61%);\r\n    --Very-Dark-Blue: hsl(233, 12%, 13%);\r\n    --Very-Pale-Red: hsl(13, 100%, 96%);\r\n    --Very-Light-Gray: hsl(0, 0%, 98%);\r\n    /* Sizes */\r\n    --logo-size: 10vw;\r\n    /* Fonts */\r\n    --font-nav: 0.8vw;\r\n}\r\n*{\r\n    padding: 0;\r\n    margin: 0;\r\n    box-sizing: border-box;\r\n    list-style: none;\r\n    font-family: 'Be Vietnam Pro';\r\n}\r\n\r\nhtml{\r\n    overflow-x: hidden;\r\n}\r\n\r\nbody{\r\n    width: 100vw;\r\n    height: 1000vh;\r\n}\r\n\r\na{\r\n    text-decoration: none;\r\n}\r\n\r\nbutton{\r\n    outline: none;\r\n    border: none;\r\n}\r\n\r\nul{\r\n    display: flex;\r\n}\r\n\r\n\r\n.container{\r\n    width: 85%;\r\n    margin: 0 auto;\r\n}\r\n\r\n\r\n/* header */\r\nheader{\r\n    height: 85vh;\r\n}\r\n\r\nheader nav{\r\n    height: 15%;\r\n    display: flex;\r\n    align-items: center;\r\n}\r\n\r\n.overlay{\r\n    display: none;\r\n}\r\n\r\nheader nav .container{\r\n    display: flex;\r\n}\r\n\r\nheader nav .container #area-logo-nav{\r\n    display: flex;\r\n    align-items: center;\r\n    width: 30%;\r\n}\r\n\r\nheader nav .container #area-logo-nav .logo{\r\n    width: var(--logo-size);\r\n    min-width: 150px;\r\n}\r\n\r\nheader nav .container #area-menu-nav{\r\n    display: flex;\r\n    align-items: center;\r\n    width: 60%;\r\n}\r\n\r\nheader nav .container #area-menu-nav .menu-nav  ul li{\r\n    padding: 0 1.2vw;\r\n    font-weight: 700;\r\n    font-size: var(--font-nav);\r\n}\r\n\r\nheader nav .container #area-button-nav{\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: flex-end;\r\n    width: 10%;\r\n}\r\nheader nav .container #area-button-nav .bnt-primary{\r\n    background-color: var(--Bright-Red);\r\n    color: var(--Very-Light-Gray);\r\n    font-size: var(--font-nav);\r\n    padding: 1.5vh 2vw;\r\n    font-weight: 700;\r\n    border-radius: 50px;\r\n    -webkit-border-radius: 50px;\r\n    -moz-border-radius: 50px;\r\n    -ms-border-radius: 50px;\r\n    -o-border-radius: 50px;\r\n}\r\n\r\nheader nav .container #area-button-nav #btn-hamburger{\r\n    display: none;\r\n}\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n/* Responsive */\r\n\r\n@media (min-width: 2160px){\r\n\r\n}\r\n\r\n@media (min-width: 2560px){\r\n\r\n    :root{\r\n        /* sizes */\r\n        --logo-size: 6.7vw;\r\n        /* fonts */\r\n        --font-nav: 0.55vw;\r\n    }\r\n}\r\n\r\n\r\n/* mobile */\r\n\r\n@media (max-width: 768px){\r\n\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

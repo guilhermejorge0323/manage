@@ -23,16 +23,7 @@ module.exports = {
                 test: /\.css$/,
                 use: ['style-loader', 'css-loader']
             },
-            {
-                test: /\.(jpg|png|svg)$/,
-                use: {
-                    loader: 'file-loader',
-                    options: {
-                        name: '[name].[ext]',
-                        outputPath: '../img/' // Caminho de saída relativo ao diretório de saída do webpack
-                    }
-                }
-            }
+ 
         ]
     },
     devtool: 'source-map'

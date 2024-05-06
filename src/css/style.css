@@ -2,16 +2,16 @@
 
 :root{
     /* Colors */
-    --Bright-Red: hsl(12, 88%, 59%);
-    --Dark-Blue: hsl(228, 39%, 23%);
-    --Dark-Grayish-Blue: hsl(227, 12%, 61%);
-    --Very-Dark-Blue: hsl(233, 12%, 13%);
-    --Very-Pale-Red: hsl(13, 100%, 96%);
-    --Very-Light-Gray: hsl(0, 0%, 98%);
+    --Bright-Red: rgb(242, 95, 58);
+    --Dark-Blue: rgb(36, 45, 82);
+    --Dark-Grayish-Blue: rgb(144, 149, 167);
+    --Very-Dark-Blue: rgb(29, 30, 37);
+    --Very-Pale-Red: rgb(255, 239, 235);
+    --Very-Light-Gray: rgb(250, 250, 250);
     /* Sizes */
     --logo-size: 10vw;
     /* Fonts */
-    --font-nav: 0.8vw;
+    --font-nav: 0.9vw;
 }
 *{
     padding: 0;
@@ -19,6 +19,7 @@
     box-sizing: border-box;
     list-style: none;
     font-family: 'Be Vietnam Pro';
+    overflow-x: hidden !important;
 }
 
 html{
@@ -32,6 +33,7 @@ body{
 
 a{
     text-decoration: none;
+    color: var(--Very-Dark-Blue);
 }
 
 button{
@@ -53,6 +55,8 @@ ul{
 /* header */
 header{
     height: 85vh;
+    /* background-image: url('../images/bg-tablet-pattern.svg'); */
+    overflow-x: hidden;
 }
 
 header nav{
@@ -86,10 +90,14 @@ header nav .container #area-menu-nav{
     width: 60%;
 }
 
-header nav .container #area-menu-nav .menu-nav  ul li{
-    padding: 0 1.2vw;
-    font-weight: 700;
+header nav .container #area-menu-nav   ul li{
+    padding: 0 1.5vw;
+    font-weight: 500;
     font-size: var(--font-nav);
+}
+
+header nav .container #area-menu-nav   ul li a:hover{
+    color: var(--Dark-Grayish-Blue);
 }
 
 header nav .container #area-button-nav{
@@ -103,32 +111,31 @@ header nav .container #area-button-nav .bnt-primary{
     color: var(--Very-Light-Gray);
     font-size: var(--font-nav);
     padding: 1.5vh 2vw;
-    font-weight: 700;
+    font-weight: 500;
     border-radius: 50px;
     -webkit-border-radius: 50px;
     -moz-border-radius: 50px;
     -ms-border-radius: 50px;
     -o-border-radius: 50px;
+    box-shadow: 0 8px 10px -3px var(--Bright-Red);
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
 }
 
-header nav .container #area-button-nav #btn-hamburger{
+header nav .container #area-button-nav .bnt-primary:hover{
+    background-color: rgba(242, 95, 58,0.5);
+    box-shadow: none;
+}
+
+header nav .container #area-button-nav .btn-hamburger{
     display: none;
 }
 
 
-
-
-
-
-
-
-
-
 /* Responsive */
-
-@media (min-width: 2160px){
-
-}
 
 @media (min-width: 2560px){
 
@@ -143,6 +150,126 @@ header nav .container #area-button-nav #btn-hamburger{
 
 /* mobile */
 
-@media (max-width: 768px){
+
+@media screen and (max-width: 1024px){
+
+    *{
+        overflow-x: hidden !important;
+        overflow-y: hidden !important;
+    }
+
+
+    :root{
+        /* sizes */
+        --logo-size: 50%;
+        /* fonts */
+        --font-nav: 3.5vw;
+        /* paddings and margins */
+    }
+    .container{
+        width: 90%;
+    }
+
+    header nav{
+        height: 10%;
+    }
+
+    header .overlay.ativo{
+        display: block;
+        position: fixed;
+        background-image: linear-gradient(to top, rgba(0,0,0,0.6),transparent);
+        width: 100vw;
+        height: 100vh;
+        z-index: 0;
+    }
+
+    header nav .container #area-logo-nav{
+        align-items: center;
+        width: 50%;
+    }
+
+    header nav .container #area-logo-nav .logo{
+        min-width: 0;
+        max-width: 100px;
+    }
+
+    header nav .container #area-menu-nav{
+        top: 7%;
+        position: fixed;
+        width: 90%;
+        right: -100%;
+        border-radius: 7px;
+        -webkit-border-radius: 7px;
+        -moz-border-radius: 7px;
+        -ms-border-radius: 7px;
+        -o-border-radius: 7px;
+        z-index: 2;
+        display: flex;
+        justify-content: center;
+        background-color: #fff;
+}
+
+
+    header nav .container #area-menu-nav  ul{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 2vh 0;
+        height: 90%;
+    }
+
+    header nav .container #area-menu-nav  ul li{
+        padding: 2vh 0;
+        text-align: center;
+        font-weight: 700;
+
+    }
+
+    header nav .container #area-button-nav{
+        z-index: 3;
+        width: 50%;
+    }
+
+    header nav .container #area-button-nav .bnt-primary{
+        display: none;
+    }
+
+    header nav .container #area-button-nav .btn-hamburger{
+        display: inline-block;
+        background-color: transparent;
+        width: 10%;
+        max-width: 25px;
+    }
 
 }
+
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+
+    :root{
+        --font-nav: 2vw;
+    }
+
+    header nav .container #area-menu-nav{
+        height: 80vh;
+    }
+}
+
+@media screen and (min-width: 712px) and (max-width: 1024px) {
+
+    :root{
+        --font-nav: 2vw;
+    }
+
+
+
+    header nav .container #area-menu-nav{
+        height: 35vh;
+        min-height: 400px;
+    }
+
+    header nav .container #area-menu-nav ul li{
+        padding: 2vh 0vh;
+    }
+
+}
+

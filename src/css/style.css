@@ -29,6 +29,8 @@ html{
 body{
     width: 100vw;
     height: 1000vh;
+    background-color: red;
+
 }
 
 a{
@@ -60,7 +62,7 @@ header{
 }
 
 header nav{
-    height: 15%;
+    height: 20%;
     display: flex;
     align-items: center;
 }
@@ -80,6 +82,7 @@ header nav .container #area-logo-nav{
 }
 
 header nav .container #area-logo-nav .logo{
+    /* Display: none; */
     width: var(--logo-size);
     min-width: 150px;
 }
@@ -105,6 +108,7 @@ header nav .container #area-button-nav{
     align-items: center;
     justify-content: flex-end;
     width: 10%;
+    padding: 1vh 0;
 }
 header nav .container #area-button-nav .bnt-primary{
     background-color: var(--Bright-Red);
@@ -151,7 +155,7 @@ header nav .container #area-button-nav .btn-hamburger{
 /* mobile */
 
 
-@media screen and (max-width: 1024px){
+@media (max-width: 1024px){
 
     *{
         overflow-x: hidden !important;
@@ -161,7 +165,7 @@ header nav .container #area-button-nav .btn-hamburger{
 
     :root{
         /* sizes */
-        --logo-size: 50%;
+        --logo-size: 75%;
         /* fonts */
         --font-nav: 3.5vw;
         /* paddings and margins */
@@ -190,7 +194,7 @@ header nav .container #area-button-nav .btn-hamburger{
 
     header nav .container #area-logo-nav .logo{
         min-width: 0;
-        max-width: 100px;
+        max-width: 150px !important;
     }
 
     header nav .container #area-menu-nav{
@@ -237,7 +241,7 @@ header nav .container #area-button-nav .btn-hamburger{
     header nav .container #area-button-nav .btn-hamburger{
         display: inline-block;
         background-color: transparent;
-        width: 10%;
+        width: 20%;
         max-width: 25px;
     }
 

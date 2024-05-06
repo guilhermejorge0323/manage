@@ -19,7 +19,6 @@
     box-sizing: border-box;
     list-style: none;
     font-family: 'Be Vietnam Pro';
-    overflow-x: hidden !important;
 }
 
 html{
@@ -29,8 +28,6 @@ html{
 body{
     width: 100vw;
     height: 1000vh;
-    background-color: red;
-
 }
 
 a{
@@ -156,10 +153,12 @@ header nav .container #area-button-nav .btn-hamburger{
 
 
 @media (max-width: 1024px){
-
-    *{
+    html{
         overflow-x: hidden !important;
-        overflow-y: hidden !important;
+    }
+
+    html.ativo{
+        overflow-y: hidden;
     }
 
 
@@ -201,6 +200,7 @@ header nav .container #area-button-nav .btn-hamburger{
         top: 7%;
         position: fixed;
         width: 90%;
+        margin: 0 auto;
         right: -100%;
         border-radius: 7px;
         -webkit-border-radius: 7px;
@@ -211,6 +211,17 @@ header nav .container #area-button-nav .btn-hamburger{
         display: flex;
         justify-content: center;
         background-color: #fff;
+
+}
+
+header nav .container #area-menu-nav.ativo{
+    right: 0;
+    left: 0;
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
 }
 
 
@@ -256,6 +267,10 @@ header nav .container #area-button-nav .btn-hamburger{
     header nav .container #area-menu-nav{
         height: 80vh;
     }
+
+    header nav .container #area-menu-nav  ul{
+        padding: 0 0;
+    }
 }
 
 @media screen and (min-width: 712px) and (max-width: 1024px) {
@@ -268,7 +283,7 @@ header nav .container #area-button-nav .btn-hamburger{
 
     header nav .container #area-menu-nav{
         height: 35vh;
-        min-height: 400px;
+        min-height: 350px;
     }
 
     header nav .container #area-menu-nav ul li{

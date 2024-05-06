@@ -1,6 +1,32 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/modules/navbarControl.js":
+/*!**************************************!*\
+  !*** ./src/modules/navbarControl.js ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ navbarControl)
+/* harmony export */ });
+function navbarControl(button, navbar, overlay, html, img) {
+  button.addEventListener('click', function (e) {
+    navbar.classList.toggle('ativo');
+    overlay.classList.toggle('ativo');
+    html.classList.toggle('ativo');
+    if (navbar.classList.contains('ativo')) {
+      img.src = './src/images/icon-close.svg';
+    } else {
+      img.src = './src/images/icon-hamburger.svg';
+    }
+  });
+}
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js!./src/css/style.css":
 /*!*****************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./src/css/style.css ***!
@@ -41,7 +67,6 @@ ___CSS_LOADER_EXPORT___.push([module.id, `:root{
     box-sizing: border-box;
     list-style: none;
     font-family: 'Be Vietnam Pro';
-    overflow-x: hidden !important;
 }
 
 html{
@@ -51,8 +76,6 @@ html{
 body{
     width: 100vw;
     height: 1000vh;
-    background-color: red;
-
 }
 
 a{
@@ -178,10 +201,12 @@ header nav .container #area-button-nav .btn-hamburger{
 
 
 @media (max-width: 1024px){
-
-    *{
+    html{
         overflow-x: hidden !important;
-        overflow-y: hidden !important;
+    }
+
+    html.ativo{
+        overflow-y: hidden;
     }
 
 
@@ -223,6 +248,7 @@ header nav .container #area-button-nav .btn-hamburger{
         top: 7%;
         position: fixed;
         width: 90%;
+        margin: 0 auto;
         right: -100%;
         border-radius: 7px;
         -webkit-border-radius: 7px;
@@ -233,6 +259,17 @@ header nav .container #area-button-nav .btn-hamburger{
         display: flex;
         justify-content: center;
         background-color: #fff;
+
+}
+
+header nav .container #area-menu-nav.ativo{
+    right: 0;
+    left: 0;
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
 }
 
 
@@ -278,6 +315,10 @@ header nav .container #area-button-nav .btn-hamburger{
     header nav .container #area-menu-nav{
         height: 80vh;
     }
+
+    header nav .container #area-menu-nav  ul{
+        padding: 0 0;
+    }
 }
 
 @media screen and (min-width: 712px) and (max-width: 1024px) {
@@ -290,7 +331,7 @@ header nav .container #area-button-nav .btn-hamburger{
 
     header nav .container #area-menu-nav{
         height: 35vh;
-        min-height: 400px;
+        min-height: 350px;
     }
 
     header nav .container #area-menu-nav ul li{
@@ -299,7 +340,7 @@ header nav .container #area-button-nav .btn-hamburger{
 
 }
 
-`, "",{"version":3,"sources":["webpack://./src/css/style.css"],"names":[],"mappings":"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","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap');\r\n\r\n:root{\r\n    /* Colors */\r\n    --Bright-Red: rgb(242, 95, 58);\r\n    --Dark-Blue: rgb(36, 45, 82);\r\n    --Dark-Grayish-Blue: rgb(144, 149, 167);\r\n    --Very-Dark-Blue: rgb(29, 30, 37);\r\n    --Very-Pale-Red: rgb(255, 239, 235);\r\n    --Very-Light-Gray: rgb(250, 250, 250);\r\n    /* Sizes */\r\n    --logo-size: 10vw;\r\n    /* Fonts */\r\n    --font-nav: 0.9vw;\r\n}\r\n*{\r\n    padding: 0;\r\n    margin: 0;\r\n    box-sizing: border-box;\r\n    list-style: none;\r\n    font-family: 'Be Vietnam Pro';\r\n    overflow-x: hidden !important;\r\n}\r\n\r\nhtml{\r\n    overflow-x: hidden;\r\n}\r\n\r\nbody{\r\n    width: 100vw;\r\n    height: 1000vh;\r\n    background-color: red;\r\n\r\n}\r\n\r\na{\r\n    text-decoration: none;\r\n    color: var(--Very-Dark-Blue);\r\n}\r\n\r\nbutton{\r\n    outline: none;\r\n    border: none;\r\n}\r\n\r\nul{\r\n    display: flex;\r\n}\r\n\r\n\r\n.container{\r\n    width: 85%;\r\n    margin: 0 auto;\r\n}\r\n\r\n\r\n/* header */\r\nheader{\r\n    height: 85vh;\r\n    /* background-image: url('../images/bg-tablet-pattern.svg'); */\r\n    overflow-x: hidden;\r\n}\r\n\r\nheader nav{\r\n    height: 20%;\r\n    display: flex;\r\n    align-items: center;\r\n}\r\n\r\n.overlay{\r\n    display: none;\r\n}\r\n\r\nheader nav .container{\r\n    display: flex;\r\n}\r\n\r\nheader nav .container #area-logo-nav{\r\n    display: flex;\r\n    align-items: center;\r\n    width: 30%;\r\n}\r\n\r\nheader nav .container #area-logo-nav .logo{\r\n    /* Display: none; */\r\n    width: var(--logo-size);\r\n    min-width: 150px;\r\n}\r\n\r\nheader nav .container #area-menu-nav{\r\n    display: flex;\r\n    align-items: center;\r\n    width: 60%;\r\n}\r\n\r\nheader nav .container #area-menu-nav   ul li{\r\n    padding: 0 1.5vw;\r\n    font-weight: 500;\r\n    font-size: var(--font-nav);\r\n}\r\n\r\nheader nav .container #area-menu-nav   ul li a:hover{\r\n    color: var(--Dark-Grayish-Blue);\r\n}\r\n\r\nheader nav .container #area-button-nav{\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: flex-end;\r\n    width: 10%;\r\n    padding: 1vh 0;\r\n}\r\nheader nav .container #area-button-nav .bnt-primary{\r\n    background-color: var(--Bright-Red);\r\n    color: var(--Very-Light-Gray);\r\n    font-size: var(--font-nav);\r\n    padding: 1.5vh 2vw;\r\n    font-weight: 500;\r\n    border-radius: 50px;\r\n    -webkit-border-radius: 50px;\r\n    -moz-border-radius: 50px;\r\n    -ms-border-radius: 50px;\r\n    -o-border-radius: 50px;\r\n    box-shadow: 0 8px 10px -3px var(--Bright-Red);\r\n    transition: all 0.3s ease-in-out;\r\n    -webkit-transition: all 0.3s ease-in-out;\r\n    -moz-transition: all 0.3s ease-in-out;\r\n    -ms-transition: all 0.3s ease-in-out;\r\n    -o-transition: all 0.3s ease-in-out;\r\n}\r\n\r\nheader nav .container #area-button-nav .bnt-primary:hover{\r\n    background-color: rgba(242, 95, 58,0.5);\r\n    box-shadow: none;\r\n}\r\n\r\nheader nav .container #area-button-nav .btn-hamburger{\r\n    display: none;\r\n}\r\n\r\n\r\n/* Responsive */\r\n\r\n@media (min-width: 2560px){\r\n\r\n    :root{\r\n        /* sizes */\r\n        --logo-size: 6.7vw;\r\n        /* fonts */\r\n        --font-nav: 0.55vw;\r\n    }\r\n}\r\n\r\n\r\n/* mobile */\r\n\r\n\r\n@media (max-width: 1024px){\r\n\r\n    *{\r\n        overflow-x: hidden !important;\r\n        overflow-y: hidden !important;\r\n    }\r\n\r\n\r\n    :root{\r\n        /* sizes */\r\n        --logo-size: 75%;\r\n        /* fonts */\r\n        --font-nav: 3.5vw;\r\n        /* paddings and margins */\r\n    }\r\n    .container{\r\n        width: 90%;\r\n    }\r\n\r\n    header nav{\r\n        height: 10%;\r\n    }\r\n\r\n    header .overlay.ativo{\r\n        display: block;\r\n        position: fixed;\r\n        background-image: linear-gradient(to top, rgba(0,0,0,0.6),transparent);\r\n        width: 100vw;\r\n        height: 100vh;\r\n        z-index: 0;\r\n    }\r\n\r\n    header nav .container #area-logo-nav{\r\n        align-items: center;\r\n        width: 50%;\r\n    }\r\n\r\n    header nav .container #area-logo-nav .logo{\r\n        min-width: 0;\r\n        max-width: 150px !important;\r\n    }\r\n\r\n    header nav .container #area-menu-nav{\r\n        top: 7%;\r\n        position: fixed;\r\n        width: 90%;\r\n        right: -100%;\r\n        border-radius: 7px;\r\n        -webkit-border-radius: 7px;\r\n        -moz-border-radius: 7px;\r\n        -ms-border-radius: 7px;\r\n        -o-border-radius: 7px;\r\n        z-index: 2;\r\n        display: flex;\r\n        justify-content: center;\r\n        background-color: #fff;\r\n}\r\n\r\n\r\n    header nav .container #area-menu-nav  ul{\r\n        display: flex;\r\n        flex-direction: column;\r\n        justify-content: space-between;\r\n        padding: 2vh 0;\r\n        height: 90%;\r\n    }\r\n\r\n    header nav .container #area-menu-nav  ul li{\r\n        padding: 2vh 0;\r\n        text-align: center;\r\n        font-weight: 700;\r\n\r\n    }\r\n\r\n    header nav .container #area-button-nav{\r\n        z-index: 3;\r\n        width: 50%;\r\n    }\r\n\r\n    header nav .container #area-button-nav .bnt-primary{\r\n        display: none;\r\n    }\r\n\r\n    header nav .container #area-button-nav .btn-hamburger{\r\n        display: inline-block;\r\n        background-color: transparent;\r\n        width: 20%;\r\n        max-width: 25px;\r\n    }\r\n\r\n}\r\n\r\n@media screen and (max-width: 1024px) and (orientation: landscape) {\r\n\r\n    :root{\r\n        --font-nav: 2vw;\r\n    }\r\n\r\n    header nav .container #area-menu-nav{\r\n        height: 80vh;\r\n    }\r\n}\r\n\r\n@media screen and (min-width: 712px) and (max-width: 1024px) {\r\n\r\n    :root{\r\n        --font-nav: 2vw;\r\n    }\r\n\r\n\r\n\r\n    header nav .container #area-menu-nav{\r\n        height: 35vh;\r\n        min-height: 400px;\r\n    }\r\n\r\n    header nav .container #area-menu-nav ul li{\r\n        padding: 2vh 0vh;\r\n    }\r\n\r\n}\r\n\r\n"],"sourceRoot":""}]);
+`, "",{"version":3,"sources":["webpack://./src/css/style.css"],"names":[],"mappings":"AAEA;IACI,WAAW;IACX,8BAA8B;IAC9B,4BAA4B;IAC5B,uCAAuC;IACvC,iCAAiC;IACjC,mCAAmC;IACnC,qCAAqC;IACrC,UAAU;IACV,iBAAiB;IACjB,UAAU;IACV,iBAAiB;AACrB;AACA;IACI,UAAU;IACV,SAAS;IACT,sBAAsB;IACtB,gBAAgB;IAChB,6BAA6B;AACjC;;AAEA;IACI,kBAAkB;AACtB;;AAEA;IACI,YAAY;IACZ,cAAc;AAClB;;AAEA;IACI,qBAAqB;IACrB,4BAA4B;AAChC;;AAEA;IACI,aAAa;IACb,YAAY;AAChB;;AAEA;IACI,aAAa;AACjB;;;AAGA;IACI,UAAU;IACV,cAAc;AAClB;;;AAGA,WAAW;AACX;IACI,YAAY;IACZ,8DAA8D;IAC9D,kBAAkB;AACtB;;AAEA;IACI,WAAW;IACX,aAAa;IACb,mBAAmB;AACvB;;AAEA;IACI,aAAa;AACjB;;AAEA;IACI,aAAa;AACjB;;AAEA;IACI,aAAa;IACb,mBAAmB;IACnB,UAAU;AACd;;AAEA;IACI,mBAAmB;IACnB,uBAAuB;IACvB,gBAAgB;AACpB;;AAEA;IACI,aAAa;IACb,mBAAmB;IACnB,UAAU;AACd;;AAEA;IACI,gBAAgB;IAChB,gBAAgB;IAChB,0BAA0B;AAC9B;;AAEA;IACI,+BAA+B;AACnC;;AAEA;IACI,aAAa;IACb,mBAAmB;IACnB,yBAAyB;IACzB,UAAU;IACV,cAAc;AAClB;AACA;IACI,mCAAmC;IACnC,6BAA6B;IAC7B,0BAA0B;IAC1B,kBAAkB;IAClB,gBAAgB;IAChB,mBAAmB;IACnB,2BAA2B;IAC3B,wBAAwB;IACxB,uBAAuB;IACvB,sBAAsB;IACtB,6CAA6C;IAC7C,gCAAgC;IAChC,wCAAwC;IACxC,qCAAqC;IACrC,oCAAoC;IACpC,mCAAmC;AACvC;;AAEA;IACI,uCAAuC;IACvC,gBAAgB;AACpB;;AAEA;IACI,aAAa;AACjB;;;AAGA,eAAe;;AAEf;;IAEI;QACI,UAAU;QACV,kBAAkB;QAClB,UAAU;QACV,kBAAkB;IACtB;AACJ;;;AAGA,WAAW;;;AAGX;IACI;QACI,6BAA6B;IACjC;;IAEA;QACI,kBAAkB;IACtB;;;IAGA;QACI,UAAU;QACV,gBAAgB;QAChB,UAAU;QACV,iBAAiB;QACjB,yBAAyB;IAC7B;IACA;QACI,UAAU;IACd;;IAEA;QACI,WAAW;IACf;;IAEA;QACI,cAAc;QACd,eAAe;QACf,sEAAsE;QACtE,YAAY;QACZ,aAAa;QACb,UAAU;IACd;;IAEA;QACI,mBAAmB;QACnB,UAAU;IACd;;IAEA;QACI,YAAY;QACZ,2BAA2B;IAC/B;;IAEA;QACI,OAAO;QACP,eAAe;QACf,UAAU;QACV,cAAc;QACd,YAAY;QACZ,kBAAkB;QAClB,0BAA0B;QAC1B,uBAAuB;QACvB,sBAAsB;QACtB,qBAAqB;QACrB,UAAU;QACV,aAAa;QACb,uBAAuB;QACvB,sBAAsB;;AAE9B;;AAEA;IACI,QAAQ;IACR,OAAO;IACP,gCAAgC;IAChC,wCAAwC;IACxC,qCAAqC;IACrC,oCAAoC;IACpC,mCAAmC;AACvC;;;IAGI;QACI,aAAa;QACb,sBAAsB;QACtB,8BAA8B;QAC9B,cAAc;QACd,WAAW;IACf;;IAEA;QACI,cAAc;QACd,kBAAkB;QAClB,gBAAgB;;IAEpB;;IAEA;QACI,UAAU;QACV,UAAU;IACd;;IAEA;QACI,aAAa;IACjB;;IAEA;QACI,qBAAqB;QACrB,6BAA6B;QAC7B,UAAU;QACV,eAAe;IACnB;;AAEJ;;AAEA;;IAEI;QACI,eAAe;IACnB;;IAEA;QACI,YAAY;IAChB;;IAEA;QACI,YAAY;IAChB;AACJ;;AAEA;;IAEI;QACI,eAAe;IACnB;;;;IAIA;QACI,YAAY;QACZ,iBAAiB;IACrB;;IAEA;QACI,gBAAgB;IACpB;;AAEJ","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap');\r\n\r\n:root{\r\n    /* Colors */\r\n    --Bright-Red: rgb(242, 95, 58);\r\n    --Dark-Blue: rgb(36, 45, 82);\r\n    --Dark-Grayish-Blue: rgb(144, 149, 167);\r\n    --Very-Dark-Blue: rgb(29, 30, 37);\r\n    --Very-Pale-Red: rgb(255, 239, 235);\r\n    --Very-Light-Gray: rgb(250, 250, 250);\r\n    /* Sizes */\r\n    --logo-size: 10vw;\r\n    /* Fonts */\r\n    --font-nav: 0.9vw;\r\n}\r\n*{\r\n    padding: 0;\r\n    margin: 0;\r\n    box-sizing: border-box;\r\n    list-style: none;\r\n    font-family: 'Be Vietnam Pro';\r\n}\r\n\r\nhtml{\r\n    overflow-x: hidden;\r\n}\r\n\r\nbody{\r\n    width: 100vw;\r\n    height: 1000vh;\r\n}\r\n\r\na{\r\n    text-decoration: none;\r\n    color: var(--Very-Dark-Blue);\r\n}\r\n\r\nbutton{\r\n    outline: none;\r\n    border: none;\r\n}\r\n\r\nul{\r\n    display: flex;\r\n}\r\n\r\n\r\n.container{\r\n    width: 85%;\r\n    margin: 0 auto;\r\n}\r\n\r\n\r\n/* header */\r\nheader{\r\n    height: 85vh;\r\n    /* background-image: url('../images/bg-tablet-pattern.svg'); */\r\n    overflow-x: hidden;\r\n}\r\n\r\nheader nav{\r\n    height: 20%;\r\n    display: flex;\r\n    align-items: center;\r\n}\r\n\r\n.overlay{\r\n    display: none;\r\n}\r\n\r\nheader nav .container{\r\n    display: flex;\r\n}\r\n\r\nheader nav .container #area-logo-nav{\r\n    display: flex;\r\n    align-items: center;\r\n    width: 30%;\r\n}\r\n\r\nheader nav .container #area-logo-nav .logo{\r\n    /* Display: none; */\r\n    width: var(--logo-size);\r\n    min-width: 150px;\r\n}\r\n\r\nheader nav .container #area-menu-nav{\r\n    display: flex;\r\n    align-items: center;\r\n    width: 60%;\r\n}\r\n\r\nheader nav .container #area-menu-nav   ul li{\r\n    padding: 0 1.5vw;\r\n    font-weight: 500;\r\n    font-size: var(--font-nav);\r\n}\r\n\r\nheader nav .container #area-menu-nav   ul li a:hover{\r\n    color: var(--Dark-Grayish-Blue);\r\n}\r\n\r\nheader nav .container #area-button-nav{\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: flex-end;\r\n    width: 10%;\r\n    padding: 1vh 0;\r\n}\r\nheader nav .container #area-button-nav .bnt-primary{\r\n    background-color: var(--Bright-Red);\r\n    color: var(--Very-Light-Gray);\r\n    font-size: var(--font-nav);\r\n    padding: 1.5vh 2vw;\r\n    font-weight: 500;\r\n    border-radius: 50px;\r\n    -webkit-border-radius: 50px;\r\n    -moz-border-radius: 50px;\r\n    -ms-border-radius: 50px;\r\n    -o-border-radius: 50px;\r\n    box-shadow: 0 8px 10px -3px var(--Bright-Red);\r\n    transition: all 0.3s ease-in-out;\r\n    -webkit-transition: all 0.3s ease-in-out;\r\n    -moz-transition: all 0.3s ease-in-out;\r\n    -ms-transition: all 0.3s ease-in-out;\r\n    -o-transition: all 0.3s ease-in-out;\r\n}\r\n\r\nheader nav .container #area-button-nav .bnt-primary:hover{\r\n    background-color: rgba(242, 95, 58,0.5);\r\n    box-shadow: none;\r\n}\r\n\r\nheader nav .container #area-button-nav .btn-hamburger{\r\n    display: none;\r\n}\r\n\r\n\r\n/* Responsive */\r\n\r\n@media (min-width: 2560px){\r\n\r\n    :root{\r\n        /* sizes */\r\n        --logo-size: 6.7vw;\r\n        /* fonts */\r\n        --font-nav: 0.55vw;\r\n    }\r\n}\r\n\r\n\r\n/* mobile */\r\n\r\n\r\n@media (max-width: 1024px){\r\n    html{\r\n        overflow-x: hidden !important;\r\n    }\r\n\r\n    html.ativo{\r\n        overflow-y: hidden;\r\n    }\r\n\r\n\r\n    :root{\r\n        /* sizes */\r\n        --logo-size: 75%;\r\n        /* fonts */\r\n        --font-nav: 3.5vw;\r\n        /* paddings and margins */\r\n    }\r\n    .container{\r\n        width: 90%;\r\n    }\r\n\r\n    header nav{\r\n        height: 10%;\r\n    }\r\n\r\n    header .overlay.ativo{\r\n        display: block;\r\n        position: fixed;\r\n        background-image: linear-gradient(to top, rgba(0,0,0,0.6),transparent);\r\n        width: 100vw;\r\n        height: 100vh;\r\n        z-index: 0;\r\n    }\r\n\r\n    header nav .container #area-logo-nav{\r\n        align-items: center;\r\n        width: 50%;\r\n    }\r\n\r\n    header nav .container #area-logo-nav .logo{\r\n        min-width: 0;\r\n        max-width: 150px !important;\r\n    }\r\n\r\n    header nav .container #area-menu-nav{\r\n        top: 7%;\r\n        position: fixed;\r\n        width: 90%;\r\n        margin: 0 auto;\r\n        right: -100%;\r\n        border-radius: 7px;\r\n        -webkit-border-radius: 7px;\r\n        -moz-border-radius: 7px;\r\n        -ms-border-radius: 7px;\r\n        -o-border-radius: 7px;\r\n        z-index: 2;\r\n        display: flex;\r\n        justify-content: center;\r\n        background-color: #fff;\r\n\r\n}\r\n\r\nheader nav .container #area-menu-nav.ativo{\r\n    right: 0;\r\n    left: 0;\r\n    transition: all 0.5s ease-in-out;\r\n    -webkit-transition: all 0.5s ease-in-out;\r\n    -moz-transition: all 0.5s ease-in-out;\r\n    -ms-transition: all 0.5s ease-in-out;\r\n    -o-transition: all 0.5s ease-in-out;\r\n}\r\n\r\n\r\n    header nav .container #area-menu-nav  ul{\r\n        display: flex;\r\n        flex-direction: column;\r\n        justify-content: space-between;\r\n        padding: 2vh 0;\r\n        height: 90%;\r\n    }\r\n\r\n    header nav .container #area-menu-nav  ul li{\r\n        padding: 2vh 0;\r\n        text-align: center;\r\n        font-weight: 700;\r\n\r\n    }\r\n\r\n    header nav .container #area-button-nav{\r\n        z-index: 3;\r\n        width: 50%;\r\n    }\r\n\r\n    header nav .container #area-button-nav .bnt-primary{\r\n        display: none;\r\n    }\r\n\r\n    header nav .container #area-button-nav .btn-hamburger{\r\n        display: inline-block;\r\n        background-color: transparent;\r\n        width: 20%;\r\n        max-width: 25px;\r\n    }\r\n\r\n}\r\n\r\n@media screen and (max-width: 1024px) and (orientation: landscape) {\r\n\r\n    :root{\r\n        --font-nav: 2vw;\r\n    }\r\n\r\n    header nav .container #area-menu-nav{\r\n        height: 80vh;\r\n    }\r\n\r\n    header nav .container #area-menu-nav  ul{\r\n        padding: 0 0;\r\n    }\r\n}\r\n\r\n@media screen and (min-width: 712px) and (max-width: 1024px) {\r\n\r\n    :root{\r\n        --font-nav: 2vw;\r\n    }\r\n\r\n\r\n\r\n    header nav .container #area-menu-nav{\r\n        height: 35vh;\r\n        min-height: 350px;\r\n    }\r\n\r\n    header nav .container #area-menu-nav ul li{\r\n        padding: 2vh 0vh;\r\n    }\r\n\r\n}\r\n\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -23596,9 +23637,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var regenerator_runtime_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! regenerator-runtime/runtime */ "./node_modules/regenerator-runtime/runtime.js");
 /* harmony import */ var regenerator_runtime_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(regenerator_runtime_runtime__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _css_style_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./css/style.css */ "./src/css/style.css");
+/* harmony import */ var _modules_navbarControl_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/navbarControl.js */ "./src/modules/navbarControl.js");
 
 
 
+
+var button = document.querySelector('.btn-hamburger');
+var navbar = document.querySelector('#area-menu-nav');
+var overlay = document.querySelector('.overlay');
+var html = document.querySelector('html');
+var img = document.querySelector('#img-hamburger');
+(0,_modules_navbarControl_js__WEBPACK_IMPORTED_MODULE_3__["default"])(button, navbar, overlay, html, img);
+console.log(html);
 })();
 
 /******/ })()

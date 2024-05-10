@@ -179,11 +179,12 @@ header nav .container #area-button-nav .btn-hamburger{
 
     header .overlay.ativo{
         display: block;
-        position: fixed;
+        position: absolute;
         background-image: linear-gradient(to top, rgba(0,0,0,0.6),transparent);
         width: 100vw;
         height: 100vh;
         z-index: 0;
+        overflow-y: scroll;
     }
 
     header nav .container #area-logo-nav{
@@ -211,6 +212,8 @@ header nav .container #area-button-nav .btn-hamburger{
         display: flex;
         justify-content: center;
         background-color: #fff;
+        overflow-y: auto;
+        align-items: center;
 
 }
 
@@ -258,21 +261,6 @@ header nav .container #area-menu-nav.ativo{
 
 }
 
-@media screen and (max-width: 1024px) and (orientation: landscape) {
-
-    :root{
-        --font-nav: 2vw;
-    }
-
-    header nav .container #area-menu-nav{
-        height: 80vh;
-    }
-
-    header nav .container #area-menu-nav  ul{
-        padding: 0 0;
-    }
-}
-
 @media screen and (min-width: 712px) and (max-width: 1024px) {
 
     :root{
@@ -290,5 +278,24 @@ header nav .container #area-menu-nav.ativo{
         padding: 2vh 0vh;
     }
 
+}
+
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+
+    :root{
+        --font-nav: 2vw;
+    }
+
+    header nav .container #area-menu-nav{
+        height: 90vh;
+        min-height: 0px !important;
+        align-items: start;
+    }
+
+    header nav .container #area-menu-nav  ul{
+        margin: 4vh;
+        min-height: 350px;
+        padding: 0 0;
+    }
 }
 

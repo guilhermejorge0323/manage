@@ -28,7 +28,6 @@ html{
 body{
     width: 100vw;
     height: 1000vh;
-    background-color: red
 }
 
 a{
@@ -159,7 +158,7 @@ header nav .container #area-button-nav .btn-hamburger{
     }
 
     html.ativo{
-        overflow-y: hidden;
+        
     }
 
 
@@ -180,7 +179,7 @@ header nav .container #area-button-nav .btn-hamburger{
 
     header .overlay.ativo{
         display: block;
-        position: absolute;
+        position: fixed;
         background-image: linear-gradient(to top, rgba(0,0,0,0.6),transparent);
         width: 100vw;
         height: 100vh;
@@ -200,7 +199,7 @@ header nav .container #area-button-nav .btn-hamburger{
 
     header nav .container #area-menu-nav{
         top: 7%;
-        position: fixed;
+        position: absolute;
         width: 90%;
         margin: 0 auto;
         right: -100%;
@@ -288,15 +287,14 @@ header nav .container #area-menu-nav.ativo{
     }
 
     header nav .container #area-menu-nav{
-        height: 90vh;
+        height: 80vh;
         min-height: 0px !important;
         align-items: start;
-        background-color: red;
     }
 
     header nav .container #area-menu-nav  ul{
         margin: 4vh;
-        min-height: 3500px;
+        min-height: 350px;
         padding: 0 0;
     }
 }

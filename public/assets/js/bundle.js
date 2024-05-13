@@ -42,11 +42,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/getUrl.js */ "./node_modules/css-loader/dist/runtime/getUrl.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__);
 // Imports
 
 
+
+var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ../images/bg-tablet-pattern.svg */ "./src/images/bg-tablet-pattern.svg"), __webpack_require__.b);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap);"]);
+var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `:root{
     /* Colors */
@@ -59,7 +64,8 @@ ___CSS_LOADER_EXPORT___.push([module.id, `:root{
     /* Sizes */
     --logo-size: 10vw;
     /* Fonts */
-    --font-nav: 0.9vw;
+    --font-text: 0.9vw;
+    --font-title: 3.5vw;
 }
 *{
     padding: 0;
@@ -102,8 +108,10 @@ ul{
 /* header */
 header{
     height: 85vh;
-    /* background-image: url('../images/bg-tablet-pattern.svg'); */
-    overflow-x: hidden;
+    background-image: url(${___CSS_LOADER_URL_REPLACEMENT_0___});
+    background-repeat: no-repeat;
+    background-size: 45vw 95vh;
+    background-position: 105% -20vh;
 }
 
 header nav{
@@ -141,7 +149,7 @@ header nav .container #area-menu-nav{
 header nav .container #area-menu-nav   ul li{
     padding: 0 1.5vw;
     font-weight: 500;
-    font-size: var(--font-nav);
+    font-size: var(--font-text);
 }
 
 header nav .container #area-menu-nav   ul li a:hover{
@@ -155,10 +163,10 @@ header nav .container #area-button-nav{
     width: 10%;
     padding: 1vh 0;
 }
-header nav .container #area-button-nav .bnt-primary{
+header .container .bnt-primary{
     background-color: var(--Bright-Red);
     color: var(--Very-Light-Gray);
-    font-size: var(--font-nav);
+    font-size: var(--font-text);
     padding: 1.5vh 2vw;
     font-weight: 500;
     border-radius: 50px;
@@ -172,15 +180,67 @@ header nav .container #area-button-nav .bnt-primary{
     -moz-transition: all 0.3s ease-in-out;
     -ms-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
+    width: auto;
 }
 
-header nav .container #area-button-nav .bnt-primary:hover{
+header .container  .bnt-primary:hover{
     background-color: rgba(242, 95, 58,0.5);
     box-shadow: none;
 }
 
 header nav .container #area-button-nav .btn-hamburger{
     display: none;
+}
+
+/* Header content */
+
+header #header-content{
+    height: 100%;
+}
+
+header #header-content .container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 80%;
+}
+
+header #header-content .container #area-text-header{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+
+}
+
+header #header-content .container #area-text-header h1{
+    width: 100%;
+    max-width: 816px;
+    font-size: var(--font-title);
+    font-weight: 700;
+    color: var(--Dark-Blue);
+}
+
+header #header-content .container #area-text-header p{
+    width: 55%;
+    max-width: 448px;
+    font-size: var(--font-text);
+    font-weight: 400;
+    color: var(--Dark-Grayish-Blue);
+    margin: 3vh 0;
+    line-height: 200%;
+}
+
+header #header-content .container #area-image-header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header #header-content .container #area-image-header img{
+    width: 30vw;
+    height: 80%;
+/*     max-width: 675px;
+    max-height: 490px; */
 }
 
 
@@ -192,7 +252,8 @@ header nav .container #area-button-nav .btn-hamburger{
         /* sizes */
         --logo-size: 6.7vw;
         /* fonts */
-        --font-nav: 0.55vw;
+        --font-text: 0.55vw;
+        --font-title: 2.5vw;
     }
 }
 
@@ -206,7 +267,7 @@ header nav .container #area-button-nav .btn-hamburger{
     }
 
     html.ativo{
-        
+        overflow-y: hidden;
     }
 
 
@@ -214,7 +275,7 @@ header nav .container #area-button-nav .btn-hamburger{
         /* sizes */
         --logo-size: 75%;
         /* fonts */
-        --font-nav: 3.5vw;
+        --font-text: 3.5vw;
         /* paddings and margins */
     }
     .container{
@@ -247,7 +308,7 @@ header nav .container #area-button-nav .btn-hamburger{
 
     header nav .container #area-menu-nav{
         top: 7%;
-        position: absolute;
+        position: fixed;
         width: 90%;
         margin: 0 auto;
         right: -100%;
@@ -306,13 +367,12 @@ header nav .container #area-menu-nav.ativo{
         width: 20%;
         max-width: 25px;
     }
-
 }
 
 @media screen and (min-width: 712px) and (max-width: 1024px) {
 
     :root{
-        --font-nav: 2vw;
+        --font-text: 2vw;
     }
 
 
@@ -331,7 +391,7 @@ header nav .container #area-menu-nav.ativo{
 @media screen and (max-width: 1024px) and (orientation: landscape) {
 
     :root{
-        --font-nav: 2vw;
+        --font-text: 2vw;
     }
 
     header nav .container #area-menu-nav{
@@ -347,7 +407,7 @@ header nav .container #area-menu-nav.ativo{
     }
 }
 
-`, "",{"version":3,"sources":["webpack://./src/css/style.css"],"names":[],"mappings":"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","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap');\r\n\r\n:root{\r\n    /* Colors */\r\n    --Bright-Red: rgb(242, 95, 58);\r\n    --Dark-Blue: rgb(36, 45, 82);\r\n    --Dark-Grayish-Blue: rgb(144, 149, 167);\r\n    --Very-Dark-Blue: rgb(29, 30, 37);\r\n    --Very-Pale-Red: rgb(255, 239, 235);\r\n    --Very-Light-Gray: rgb(250, 250, 250);\r\n    /* Sizes */\r\n    --logo-size: 10vw;\r\n    /* Fonts */\r\n    --font-nav: 0.9vw;\r\n}\r\n*{\r\n    padding: 0;\r\n    margin: 0;\r\n    box-sizing: border-box;\r\n    list-style: none;\r\n    font-family: 'Be Vietnam Pro';\r\n}\r\n\r\nhtml{\r\n    overflow-x: hidden;\r\n}\r\n\r\nbody{\r\n    width: 100vw;\r\n    height: 1000vh;\r\n}\r\n\r\na{\r\n    text-decoration: none;\r\n    color: var(--Very-Dark-Blue);\r\n}\r\n\r\nbutton{\r\n    outline: none;\r\n    border: none;\r\n}\r\n\r\nul{\r\n    display: flex;\r\n}\r\n\r\n\r\n.container{\r\n    width: 85%;\r\n    margin: 0 auto;\r\n}\r\n\r\n\r\n/* header */\r\nheader{\r\n    height: 85vh;\r\n    /* background-image: url('../images/bg-tablet-pattern.svg'); */\r\n    overflow-x: hidden;\r\n}\r\n\r\nheader nav{\r\n    height: 20%;\r\n    display: flex;\r\n    align-items: center;\r\n}\r\n\r\n.overlay{\r\n    display: none;\r\n}\r\n\r\nheader nav .container{\r\n    display: flex;\r\n}\r\n\r\nheader nav .container #area-logo-nav{\r\n    display: flex;\r\n    align-items: center;\r\n    width: 30%;\r\n}\r\n\r\nheader nav .container #area-logo-nav .logo{\r\n    /* Display: none; */\r\n    width: var(--logo-size);\r\n    min-width: 150px;\r\n}\r\n\r\nheader nav .container #area-menu-nav{\r\n    display: flex;\r\n    align-items: center;\r\n    width: 60%;\r\n}\r\n\r\nheader nav .container #area-menu-nav   ul li{\r\n    padding: 0 1.5vw;\r\n    font-weight: 500;\r\n    font-size: var(--font-nav);\r\n}\r\n\r\nheader nav .container #area-menu-nav   ul li a:hover{\r\n    color: var(--Dark-Grayish-Blue);\r\n}\r\n\r\nheader nav .container #area-button-nav{\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: flex-end;\r\n    width: 10%;\r\n    padding: 1vh 0;\r\n}\r\nheader nav .container #area-button-nav .bnt-primary{\r\n    background-color: var(--Bright-Red);\r\n    color: var(--Very-Light-Gray);\r\n    font-size: var(--font-nav);\r\n    padding: 1.5vh 2vw;\r\n    font-weight: 500;\r\n    border-radius: 50px;\r\n    -webkit-border-radius: 50px;\r\n    -moz-border-radius: 50px;\r\n    -ms-border-radius: 50px;\r\n    -o-border-radius: 50px;\r\n    box-shadow: 0 8px 10px -3px var(--Bright-Red);\r\n    transition: all 0.3s ease-in-out;\r\n    -webkit-transition: all 0.3s ease-in-out;\r\n    -moz-transition: all 0.3s ease-in-out;\r\n    -ms-transition: all 0.3s ease-in-out;\r\n    -o-transition: all 0.3s ease-in-out;\r\n}\r\n\r\nheader nav .container #area-button-nav .bnt-primary:hover{\r\n    background-color: rgba(242, 95, 58,0.5);\r\n    box-shadow: none;\r\n}\r\n\r\nheader nav .container #area-button-nav .btn-hamburger{\r\n    display: none;\r\n}\r\n\r\n\r\n/* Responsive */\r\n\r\n@media (min-width: 2560px){\r\n\r\n    :root{\r\n        /* sizes */\r\n        --logo-size: 6.7vw;\r\n        /* fonts */\r\n        --font-nav: 0.55vw;\r\n    }\r\n}\r\n\r\n\r\n/* mobile */\r\n\r\n\r\n@media (max-width: 1024px){\r\n    html{\r\n        overflow-x: hidden !important;\r\n    }\r\n\r\n    html.ativo{\r\n        \r\n    }\r\n\r\n\r\n    :root{\r\n        /* sizes */\r\n        --logo-size: 75%;\r\n        /* fonts */\r\n        --font-nav: 3.5vw;\r\n        /* paddings and margins */\r\n    }\r\n    .container{\r\n        width: 90%;\r\n    }\r\n\r\n    header nav{\r\n        height: 10%;\r\n    }\r\n\r\n    header .overlay.ativo{\r\n        display: block;\r\n        position: fixed;\r\n        background-image: linear-gradient(to top, rgba(0,0,0,0.6),transparent);\r\n        width: 100vw;\r\n        height: 100vh;\r\n        z-index: 0;\r\n        overflow-y: scroll;\r\n    }\r\n\r\n    header nav .container #area-logo-nav{\r\n        align-items: center;\r\n        width: 50%;\r\n    }\r\n\r\n    header nav .container #area-logo-nav .logo{\r\n        min-width: 0;\r\n        max-width: 150px !important;\r\n    }\r\n\r\n    header nav .container #area-menu-nav{\r\n        top: 7%;\r\n        position: absolute;\r\n        width: 90%;\r\n        margin: 0 auto;\r\n        right: -100%;\r\n        border-radius: 7px;\r\n        -webkit-border-radius: 7px;\r\n        -moz-border-radius: 7px;\r\n        -ms-border-radius: 7px;\r\n        -o-border-radius: 7px;\r\n        z-index: 2;\r\n        display: flex;\r\n        justify-content: center;\r\n        background-color: #fff;\r\n        overflow-y: auto;\r\n        align-items: center;\r\n\r\n}\r\n\r\nheader nav .container #area-menu-nav.ativo{\r\n    right: 0;\r\n    left: 0;\r\n    transition: all 0.5s ease-in-out;\r\n    -webkit-transition: all 0.5s ease-in-out;\r\n    -moz-transition: all 0.5s ease-in-out;\r\n    -ms-transition: all 0.5s ease-in-out;\r\n    -o-transition: all 0.5s ease-in-out;\r\n}\r\n\r\n\r\n    header nav .container #area-menu-nav  ul{\r\n        display: flex;\r\n        flex-direction: column;\r\n        justify-content: space-between;\r\n        padding: 2vh 0;\r\n        height: 90%;\r\n    }\r\n\r\n    header nav .container #area-menu-nav  ul li{\r\n        padding: 2vh 0;\r\n        text-align: center;\r\n        font-weight: 700;\r\n\r\n    }\r\n\r\n    header nav .container #area-button-nav{\r\n        z-index: 3;\r\n        width: 50%;\r\n    }\r\n\r\n    header nav .container #area-button-nav .bnt-primary{\r\n        display: none;\r\n    }\r\n\r\n    header nav .container #area-button-nav .btn-hamburger{\r\n        display: inline-block;\r\n        background-color: transparent;\r\n        width: 20%;\r\n        max-width: 25px;\r\n    }\r\n\r\n}\r\n\r\n@media screen and (min-width: 712px) and (max-width: 1024px) {\r\n\r\n    :root{\r\n        --font-nav: 2vw;\r\n    }\r\n\r\n\r\n\r\n    header nav .container #area-menu-nav{\r\n        height: 35vh;\r\n        min-height: 350px;\r\n    }\r\n\r\n    header nav .container #area-menu-nav ul li{\r\n        padding: 2vh 0vh;\r\n    }\r\n\r\n}\r\n\r\n@media screen and (max-width: 1024px) and (orientation: landscape) {\r\n\r\n    :root{\r\n        --font-nav: 2vw;\r\n    }\r\n\r\n    header nav .container #area-menu-nav{\r\n        height: 80vh;\r\n        min-height: 0px !important;\r\n        align-items: start;\r\n    }\r\n\r\n    header nav .container #area-menu-nav  ul{\r\n        margin: 4vh;\r\n        min-height: 350px;\r\n        padding: 0 0;\r\n    }\r\n}\r\n\r\n"],"sourceRoot":""}]);
+`, "",{"version":3,"sources":["webpack://./src/css/style.css"],"names":[],"mappings":"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","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap');\r\n\r\n:root{\r\n    /* Colors */\r\n    --Bright-Red: rgb(242, 95, 58);\r\n    --Dark-Blue: rgb(36, 45, 82);\r\n    --Dark-Grayish-Blue: rgb(144, 149, 167);\r\n    --Very-Dark-Blue: rgb(29, 30, 37);\r\n    --Very-Pale-Red: rgb(255, 239, 235);\r\n    --Very-Light-Gray: rgb(250, 250, 250);\r\n    /* Sizes */\r\n    --logo-size: 10vw;\r\n    /* Fonts */\r\n    --font-text: 0.9vw;\r\n    --font-title: 3.5vw;\r\n}\r\n*{\r\n    padding: 0;\r\n    margin: 0;\r\n    box-sizing: border-box;\r\n    list-style: none;\r\n    font-family: 'Be Vietnam Pro';\r\n}\r\n\r\nhtml{\r\n    overflow-x: hidden;\r\n}\r\n\r\nbody{\r\n    width: 100vw;\r\n    height: 1000vh;\r\n}\r\n\r\na{\r\n    text-decoration: none;\r\n    color: var(--Very-Dark-Blue);\r\n}\r\n\r\nbutton{\r\n    outline: none;\r\n    border: none;\r\n}\r\n\r\nul{\r\n    display: flex;\r\n}\r\n\r\n\r\n.container{\r\n    width: 85%;\r\n    margin: 0 auto;\r\n}\r\n\r\n\r\n/* header */\r\nheader{\r\n    height: 85vh;\r\n    background-image: url('../images/bg-tablet-pattern.svg');\r\n    background-repeat: no-repeat;\r\n    background-size: 45vw 95vh;\r\n    background-position: 105% -20vh;\r\n}\r\n\r\nheader nav{\r\n    height: 20%;\r\n    display: flex;\r\n    align-items: center;\r\n}\r\n\r\n.overlay{\r\n    display: none;\r\n}\r\n\r\nheader nav .container{\r\n    display: flex;\r\n}\r\n\r\nheader nav .container #area-logo-nav{\r\n    display: flex;\r\n    align-items: center;\r\n    width: 30%;\r\n}\r\n\r\nheader nav .container #area-logo-nav .logo{\r\n    /* Display: none; */\r\n    width: var(--logo-size);\r\n    min-width: 150px;\r\n}\r\n\r\nheader nav .container #area-menu-nav{\r\n    display: flex;\r\n    align-items: center;\r\n    width: 60%;\r\n}\r\n\r\nheader nav .container #area-menu-nav   ul li{\r\n    padding: 0 1.5vw;\r\n    font-weight: 500;\r\n    font-size: var(--font-text);\r\n}\r\n\r\nheader nav .container #area-menu-nav   ul li a:hover{\r\n    color: var(--Dark-Grayish-Blue);\r\n}\r\n\r\nheader nav .container #area-button-nav{\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: flex-end;\r\n    width: 10%;\r\n    padding: 1vh 0;\r\n}\r\nheader .container .bnt-primary{\r\n    background-color: var(--Bright-Red);\r\n    color: var(--Very-Light-Gray);\r\n    font-size: var(--font-text);\r\n    padding: 1.5vh 2vw;\r\n    font-weight: 500;\r\n    border-radius: 50px;\r\n    -webkit-border-radius: 50px;\r\n    -moz-border-radius: 50px;\r\n    -ms-border-radius: 50px;\r\n    -o-border-radius: 50px;\r\n    box-shadow: 0 8px 10px -3px var(--Bright-Red);\r\n    transition: all 0.3s ease-in-out;\r\n    -webkit-transition: all 0.3s ease-in-out;\r\n    -moz-transition: all 0.3s ease-in-out;\r\n    -ms-transition: all 0.3s ease-in-out;\r\n    -o-transition: all 0.3s ease-in-out;\r\n    width: auto;\r\n}\r\n\r\nheader .container  .bnt-primary:hover{\r\n    background-color: rgba(242, 95, 58,0.5);\r\n    box-shadow: none;\r\n}\r\n\r\nheader nav .container #area-button-nav .btn-hamburger{\r\n    display: none;\r\n}\r\n\r\n/* Header content */\r\n\r\nheader #header-content{\r\n    height: 100%;\r\n}\r\n\r\nheader #header-content .container{\r\n    display: grid;\r\n    grid-template-columns: 1fr 1fr;\r\n    height: 80%;\r\n}\r\n\r\nheader #header-content .container #area-text-header{\r\n    display: flex;\r\n    justify-content: center;\r\n    flex-direction: column;\r\n    align-items: flex-start;\r\n\r\n}\r\n\r\nheader #header-content .container #area-text-header h1{\r\n    width: 100%;\r\n    max-width: 816px;\r\n    font-size: var(--font-title);\r\n    font-weight: 700;\r\n    color: var(--Dark-Blue);\r\n}\r\n\r\nheader #header-content .container #area-text-header p{\r\n    width: 55%;\r\n    max-width: 448px;\r\n    font-size: var(--font-text);\r\n    font-weight: 400;\r\n    color: var(--Dark-Grayish-Blue);\r\n    margin: 3vh 0;\r\n    line-height: 200%;\r\n}\r\n\r\nheader #header-content .container #area-image-header{\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n}\r\n\r\nheader #header-content .container #area-image-header img{\r\n    width: 30vw;\r\n    height: 80%;\r\n/*     max-width: 675px;\r\n    max-height: 490px; */\r\n}\r\n\r\n\r\n/* Responsive */\r\n\r\n@media (min-width: 2560px){\r\n\r\n    :root{\r\n        /* sizes */\r\n        --logo-size: 6.7vw;\r\n        /* fonts */\r\n        --font-text: 0.55vw;\r\n        --font-title: 2.5vw;\r\n    }\r\n}\r\n\r\n\r\n/* mobile */\r\n\r\n\r\n@media (max-width: 1024px){\r\n    html{\r\n        overflow-x: hidden !important;\r\n    }\r\n\r\n    html.ativo{\r\n        overflow-y: hidden;\r\n    }\r\n\r\n\r\n    :root{\r\n        /* sizes */\r\n        --logo-size: 75%;\r\n        /* fonts */\r\n        --font-text: 3.5vw;\r\n        /* paddings and margins */\r\n    }\r\n    .container{\r\n        width: 90%;\r\n    }\r\n\r\n    header nav{\r\n        height: 10%;\r\n    }\r\n\r\n    header .overlay.ativo{\r\n        display: block;\r\n        position: fixed;\r\n        background-image: linear-gradient(to top, rgba(0,0,0,0.6),transparent);\r\n        width: 100vw;\r\n        height: 100vh;\r\n        z-index: 0;\r\n        overflow-y: scroll;\r\n    }\r\n\r\n    header nav .container #area-logo-nav{\r\n        align-items: center;\r\n        width: 50%;\r\n    }\r\n\r\n    header nav .container #area-logo-nav .logo{\r\n        min-width: 0;\r\n        max-width: 150px !important;\r\n    }\r\n\r\n    header nav .container #area-menu-nav{\r\n        top: 7%;\r\n        position: fixed;\r\n        width: 90%;\r\n        margin: 0 auto;\r\n        right: -100%;\r\n        border-radius: 7px;\r\n        -webkit-border-radius: 7px;\r\n        -moz-border-radius: 7px;\r\n        -ms-border-radius: 7px;\r\n        -o-border-radius: 7px;\r\n        z-index: 2;\r\n        display: flex;\r\n        justify-content: center;\r\n        background-color: #fff;\r\n        overflow-y: auto;\r\n        align-items: center;\r\n\r\n}\r\n\r\nheader nav .container #area-menu-nav.ativo{\r\n    right: 0;\r\n    left: 0;\r\n    transition: all 0.5s ease-in-out;\r\n    -webkit-transition: all 0.5s ease-in-out;\r\n    -moz-transition: all 0.5s ease-in-out;\r\n    -ms-transition: all 0.5s ease-in-out;\r\n    -o-transition: all 0.5s ease-in-out;\r\n}\r\n\r\n\r\n    header nav .container #area-menu-nav  ul{\r\n        display: flex;\r\n        flex-direction: column;\r\n        justify-content: space-between;\r\n        padding: 2vh 0;\r\n        height: 90%;\r\n    }\r\n\r\n    header nav .container #area-menu-nav  ul li{\r\n        padding: 2vh 0;\r\n        text-align: center;\r\n        font-weight: 700;\r\n\r\n    }\r\n\r\n    header nav .container #area-button-nav{\r\n        z-index: 3;\r\n        width: 50%;\r\n    }\r\n\r\n    header nav .container #area-button-nav .bnt-primary{\r\n        display: none;\r\n    }\r\n\r\n    header nav .container #area-button-nav .btn-hamburger{\r\n        display: inline-block;\r\n        background-color: transparent;\r\n        width: 20%;\r\n        max-width: 25px;\r\n    }\r\n}\r\n\r\n@media screen and (min-width: 712px) and (max-width: 1024px) {\r\n\r\n    :root{\r\n        --font-text: 2vw;\r\n    }\r\n\r\n\r\n\r\n    header nav .container #area-menu-nav{\r\n        height: 35vh;\r\n        min-height: 350px;\r\n    }\r\n\r\n    header nav .container #area-menu-nav ul li{\r\n        padding: 2vh 0vh;\r\n    }\r\n\r\n}\r\n\r\n@media screen and (max-width: 1024px) and (orientation: landscape) {\r\n\r\n    :root{\r\n        --font-text: 2vw;\r\n    }\r\n\r\n    header nav .container #area-menu-nav{\r\n        height: 80vh;\r\n        min-height: 0px !important;\r\n        align-items: start;\r\n    }\r\n\r\n    header nav .container #area-menu-nav  ul{\r\n        margin: 4vh;\r\n        min-height: 350px;\r\n        padding: 0 0;\r\n    }\r\n}\r\n\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -445,6 +505,42 @@ module.exports = function (cssWithMappingToString) {
     }
   };
   return list;
+};
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/runtime/getUrl.js":
+/*!********************************************************!*\
+  !*** ./node_modules/css-loader/dist/runtime/getUrl.js ***!
+  \********************************************************/
+/***/ ((module) => {
+
+"use strict";
+
+
+module.exports = function (url, options) {
+  if (!options) {
+    options = {};
+  }
+  if (!url) {
+    return url;
+  }
+  url = String(url.__esModule ? url.default : url);
+
+  // If url is already wrapped in quotes, remove them
+  if (/^['"].*['"]$/.test(url)) {
+    url = url.slice(1, -1);
+  }
+  if (options.hash) {
+    url += options.hash;
+  }
+
+  // Should url be wrapped?
+  // See https://drafts.csswg.org/css-values-3/#urls
+  if (/["'() \t\n]|(%20)/.test(url) || options.needQuotes) {
+    return "\"".concat(url.replace(/"/g, '\\"').replace(/\n/g, "\\n"), "\"");
+  }
+  return url;
 };
 
 /***/ }),
@@ -1571,6 +1667,17 @@ function styleTagTransform(css, styleElement) {
   }
 }
 module.exports = styleTagTransform;
+
+/***/ }),
+
+/***/ "./src/images/bg-tablet-pattern.svg":
+/*!******************************************!*\
+  !*** ./src/images/bg-tablet-pattern.svg ***!
+  \******************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "b6990a984c7bcc142d3e.svg";
 
 /***/ }),
 
@@ -23572,6 +23679,9 @@ module.exports = __webpack_require__(/*! ../internals/path */ "./node_modules/co
 /******/ 		return module.exports;
 /******/ 	}
 /******/ 	
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = __webpack_modules__;
+/******/ 	
 /************************************************************************/
 /******/ 	/* webpack/runtime/compat get default export */
 /******/ 	(() => {
@@ -23625,6 +23735,55 @@ module.exports = __webpack_require__(/*! ../internals/path */ "./node_modules/co
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		var scriptUrl;
+/******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
+/******/ 		var document = __webpack_require__.g.document;
+/******/ 		if (!scriptUrl && document) {
+/******/ 			if (document.currentScript)
+/******/ 				scriptUrl = document.currentScript.src;
+/******/ 			if (!scriptUrl) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				if(scripts.length) {
+/******/ 					var i = scripts.length - 1;
+/******/ 					while (i > -1 && (!scriptUrl || !/^http(s?):/.test(scriptUrl))) scriptUrl = scripts[i--].src;
+/******/ 				}
+/******/ 			}
+/******/ 		}
+/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
+/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
+/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
+/******/ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
+/******/ 		__webpack_require__.p = scriptUrl;
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/jsonp chunk loading */
+/******/ 	(() => {
+/******/ 		__webpack_require__.b = document.baseURI || self.location.href;
+/******/ 		
+/******/ 		// object to store loaded and loading chunks
+/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
+/******/ 		var installedChunks = {
+/******/ 			"main": 0
+/******/ 		};
+/******/ 		
+/******/ 		// no chunk on demand loading
+/******/ 		
+/******/ 		// no prefetching
+/******/ 		
+/******/ 		// no preloaded
+/******/ 		
+/******/ 		// no HMR
+/******/ 		
+/******/ 		// no HMR manifest
+/******/ 		
+/******/ 		// no on chunks loaded
+/******/ 		
+/******/ 		// no jsonp function
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/nonce */
 /******/ 	(() => {
 /******/ 		__webpack_require__.nc = undefined;
@@ -23655,7 +23814,6 @@ var overlay = document.querySelector('.overlay');
 var html = document.querySelector('html');
 var img = document.querySelector('#img-hamburger');
 (0,_modules_navbarControl_js__WEBPACK_IMPORTED_MODULE_3__["default"])(button, navbar, overlay, html, img);
-console.log(html);
 })();
 
 /******/ })()

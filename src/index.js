@@ -10,4 +10,3 @@ const html = document.querySelector('html');
 const img = document.querySelector('#img-hamburger');
 
 navbarControl(button,navbar,overlay,html,img);
-console.log(html)

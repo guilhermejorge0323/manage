@@ -10,6 +10,7 @@
     --Very-Light-Gray: rgb(250, 250, 250);
     /* Sizes */
     --logo-size: 10vw;
+    --image-header-size: 100%;
     /* Fonts */
     --font-text: 0.9vw;
     --font-title: 3.5vw;
@@ -184,8 +185,8 @@ header #header-content .container #area-image-header{
 }
 
 header #header-content .container #area-image-header img{
-    width: 30vw;
-    height: 80%;
+    width: var(--image-header-size);
+    height: 100%;
 /*     max-width: 675px;
     max-height: 490px; */
 }
@@ -198,6 +199,7 @@ header #header-content .container #area-image-header img{
     :root{
         /* sizes */
         --logo-size: 6.7vw;
+        --image-header-size: 30vw;
         /* fonts */
         --font-text: 0.55vw;
         --font-title: 2.5vw;
@@ -223,14 +225,22 @@ header #header-content .container #area-image-header img{
         --logo-size: 75%;
         /* fonts */
         --font-text: 3.5vw;
+        --font-title: 8vw;
         /* paddings and margins */
     }
     .container{
-        width: 90%;
+        width: 85%;
+    }
+
+    header{
+        height: auto;
+        background-size: 90vw 60vh;
+        background-position: 130% -10vh;
     }
 
     header nav{
-        height: 10%;
+        height: 15%;
+        padding-top: 5vh;
     }
 
     header .overlay.ativo{
@@ -314,6 +324,35 @@ header nav .container #area-menu-nav.ativo{
         width: 20%;
         max-width: 25px;
     }
+
+    header #header-content .container{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    header #header-content .container #area-image-header{
+        order: 1;
+    }
+
+    header #header-content .container #area-image-header img{
+        width: 110%;
+        height: 90%;
+    }
+
+    header #header-content .container #area-text-header{
+        order: 2;
+        text-align: center;
+    }
+
+    header #header-content .container #area-text-header p{
+        width: 100%;
+        margin: 2vh auto;
+    }
+
+    header .container .bnt-primary{
+        margin: 0 auto;
+        padding: 2vh 8vw;
+    }
 }
 
 @media screen and (min-width: 712px) and (max-width: 1024px) {
@@ -338,7 +377,12 @@ header nav .container #area-menu-nav.ativo{
 @media screen and (max-width: 1024px) and (orientation: landscape) {
 
     :root{
-        --font-text: 2vw;
+        --font-text: 3vw;
+    }
+
+    header{
+        background-size: 110vw 90vh;
+        background-position: -180% -5%;
     }
 
     header nav .container #area-menu-nav{
@@ -351,6 +395,21 @@ header nav .container #area-menu-nav.ativo{
         margin: 4vh;
         min-height: 350px;
         padding: 0 0;
+    }
+
+    header #header-content .container #area-image-header{
+        display: block;
+        height: 75%;
+    }
+
+    header #header-content .container #area-image-header img{
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+    }
+
+    header #header-content .container #area-text-header p{
+        margin: 4vh auto;
     }
 }
 
